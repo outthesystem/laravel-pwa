@@ -2,7 +2,7 @@
   "short_name": "pwa-laravel",
   "name": "progressive web app with laravel",
   "display": "standalone",
-  "scope": "http://localhost/pwa-laravel/public",
+  "scope": "https://laravelmanifest.herokuapp.com/",
   "start_url": "/",
   "orientation": "portrait",
   "theme_color": "#76F498",

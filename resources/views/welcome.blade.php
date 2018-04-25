@@ -63,8 +63,8 @@
                 margin-bottom: 30px;
             }
         </style>
-        <link rel="manifest" href="{{asset('manifest.json')}}">        
-        <script src="{{asset('sw.js')}}" charset="utf-8"></script>
+        <link rel="manifest" href="{{secure_asset('manifest.json')}}">        
+        <script src="{{secure_asset('sw.js')}}" charset="utf-8"></script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
