@@ -1,0 +1,32 @@
+{
+  "short_name": "pwa-laravel",
+  "name": "progressive web app with laravel",
+  "display": "standalone",
+  "scope": "http://localhost/pwa-laravel/public",
+  "start_url": "/",
+  "orientation": "portrait",
+  "theme_color": "#76F498",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+     "src": "img/favicon48.png",
+     "type": "image/png",
+     "sizes": "48x48"
+   },
+   {
+     "src": "img/favicon96.png",
+     "type": "image/png",
+     "sizes": "96x96"
+   },
+    {
+      "src": "img/favicon144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+   {
+     "src": "img/favicon192.png",
+     "type": "image/png",
+     "sizes": "192x192"
+   }
+  ]
+}
