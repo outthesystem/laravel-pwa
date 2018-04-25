@@ -63,8 +63,37 @@
                 margin-bottom: 30px;
             }
         </style>
-        <link rel="manifest" href="{{secure_asset('manifest.json')}}">        
-        <script src="{{secure_asset('sw.js')}}" charset="utf-8"></script>
+        <link rel="manifest" href="{{secure_asset('manifest.json')}}">
+        <script type="text/javascript">
+          if ('serviceWorker' in navigator) {
+          	window.addEventListener('load', function() {
+          		navigator.serviceWorker.register('{{asset('/sw.js')}}').then(function(registration) {
+          			// Registration was successful
+          			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          		}).catch(function(err) {
+          			// registration failed :(
+          			console.log('ServiceWorker registration failed: ', err);
+          		});
+          	});
+          }
+          window.addEventListener('beforeinstallprompt', function(e) {
+            // beforeinstallprompt Event fired
+
+            // e.userChoice will return a Promise.
+            // For more details read: https://developers.google.com/web/fundamentals/getting-started/primers/promises
+            e.userChoice.then(function(choiceResult) {
+
+              console.log(choiceResult.outcome);
+
+              if(choiceResult.outcome == 'dismissed') {
+                console.log('User cancelled home screen install');
+              }
+              else {
+                console.log('User added to home screen');
+              }
+            });
+          });
+      	</script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
